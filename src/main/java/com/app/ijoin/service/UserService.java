@@ -1,6 +1,6 @@
-package com.hack.yeah.service;
+package com.app.ijoin.service;
 
-import com.hack.yeah.model.User;
+import com.app.ijoin.model.User;
 
 public interface UserService{
 	void save(User user);

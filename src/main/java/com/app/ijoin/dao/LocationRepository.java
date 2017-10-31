@@ -1,9 +1,8 @@
-package com.hack.yeah.dao;
+package com.app.ijoin.dao;
 
+import com.app.ijoin.model.Location;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import com.hack.yeah.model.Location;
 
 @Repository
 public interface LocationRepository extends JpaRepository<Location, Long> {

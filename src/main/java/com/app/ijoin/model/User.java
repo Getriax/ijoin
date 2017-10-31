@@ -1,4 +1,4 @@
-package com.hack.yeah.model;
+package com.app.ijoin.model;
 
 import java.util.Set;
 
@@ -10,7 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 

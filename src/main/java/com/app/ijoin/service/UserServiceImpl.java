@@ -1,14 +1,13 @@
-package com.hack.yeah.service;
+package com.app.ijoin.service;
 
 import java.util.HashSet;
 
+import com.app.ijoin.dao.RoleRepository;
+import com.app.ijoin.dao.UserRepository;
+import com.app.ijoin.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import com.hack.yeah.dao.RoleRepository;
-import com.hack.yeah.dao.UserRepository;
-import com.hack.yeah.model.User;
 
 @Service
 public class UserServiceImpl implements UserService{

@@ -1,10 +1,12 @@
-package com.hack.yeah.service;
+package com.app.ijoin.service;
 
 
 
 import java.util.HashSet;
 import java.util.Set;
 
+import com.app.ijoin.dao.UserRepository;
+import com.app.ijoin.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,9 +16,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hack.yeah.dao.UserRepository;
-import com.hack.yeah.model.Role;
-import com.hack.yeah.model.User;
+import com.app.ijoin.model.Role;
 
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {

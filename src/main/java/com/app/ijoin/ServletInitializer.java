@@ -1,4 +1,4 @@
-package com.hack.yeah;
+package com.app.ijoin;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(HackyeahApplication.class);
+		return application.sources(IjoinApplication.class);
 	}
 
 }

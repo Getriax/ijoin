@@ -1,4 +1,4 @@
-package com.hack.yeah.model;
+package com.app.ijoin.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

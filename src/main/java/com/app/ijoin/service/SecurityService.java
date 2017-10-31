@@ -1,4 +1,4 @@
-package com.hack.yeah.service;
+package com.app.ijoin.service;
 
 public interface SecurityService {
 	String findLoggedInUsername();

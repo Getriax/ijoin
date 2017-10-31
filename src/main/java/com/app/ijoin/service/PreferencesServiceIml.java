@@ -1,17 +1,17 @@
-package com.hack.yeah.service;
+package com.app.ijoin.service;
 
 import java.util.List;
 
+import com.app.ijoin.dao.PreferencesRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.hack.yeah.dao.PreferencesRespository;
-import com.hack.yeah.model.Preferences;
+import com.app.ijoin.model.Preferences;
 
 
 
 public class PreferencesServiceIml {
 	@Autowired
-	PreferencesRespository preferencesRespository;
+    PreferencesRespository preferencesRespository;
 	
 
 	public List<Preferences> findAll() {

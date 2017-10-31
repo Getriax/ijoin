@@ -1,13 +1,14 @@
 package com.example.demo;
 
+import com.app.ijoin.IjoinApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
-public class HackyeahApplicationTests {
+@SpringBootTest(classes = IjoinApplication.class)
+public class IjoinApplicationTests {
 
 	@Test
 	public void contextLoads() {

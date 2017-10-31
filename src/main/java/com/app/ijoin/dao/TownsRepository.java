@@ -1,4 +1,4 @@
-package com.hack.yeah.dao;
+package com.app.ijoin.dao;
 
 import org.springframework.data.jpa.repository.Query;
 

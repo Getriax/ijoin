@@ -1,12 +1,12 @@
-package com.hack.yeah.service;
+package com.app.ijoin.service;
 
 import java.util.Set;
 
+import com.app.ijoin.model.Preferences;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
-import com.hack.yeah.model.Location;
-import com.hack.yeah.model.Preferences;
+import com.app.ijoin.model.Location;
 
 @Service
 public class GsonService {

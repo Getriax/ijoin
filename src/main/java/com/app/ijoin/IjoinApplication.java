@@ -1,13 +1,13 @@
-package com.hack.yeah;
+package com.app.ijoin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-@ComponentScan("com.hack.yeah")
+@ComponentScan("com.app.ijoin")
 @SpringBootApplication
-public class HackyeahApplication {
+public class IjoinApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HackyeahApplication.class, args);
+		SpringApplication.run(IjoinApplication.class, args);
 	}
 }

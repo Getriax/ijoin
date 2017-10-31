@@ -1,22 +1,20 @@
-package com.hack.yeah;
+package com.app.ijoin;
 
 import java.security.Principal;
-import java.sql.Time;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.function.Predicate;
 
+import com.app.ijoin.dao.PreferencesRespository;
+import com.app.ijoin.dao.UserRepository;
+import com.app.ijoin.model.Preferences;
+import com.app.ijoin.model.User;
+import com.app.ijoin.service.GsonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,11 +23,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
-import com.hack.yeah.dao.PreferencesRespository;
-import com.hack.yeah.dao.UserRepository;
-import com.hack.yeah.model.Preferences;
-import com.hack.yeah.model.User;
-import com.hack.yeah.service.GsonService;
 
 @RestController
 @RequestMapping("/rest")
@@ -41,7 +34,7 @@ public class RestCont {
 	private PreferencesRespository preferencesRespository;
 	AtomicLong atomicLong = new AtomicLong();
 	@Autowired
-	GsonService gsonService;
+    GsonService gsonService;
 
 	@RequestMapping(value = "/updateUser/{username}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public String updateUser(@PathVariable(value = "username") String username,

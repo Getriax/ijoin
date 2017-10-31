@@ -1,14 +1,13 @@
-package com.hack.yeah.dao;
+package com.app.ijoin.dao;
 
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.hack.yeah.model.Preferences;
+import com.app.ijoin.model.Preferences;
 
 @Repository
 public interface PreferencesRespository extends JpaRepository<Preferences, Long> {

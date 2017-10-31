@@ -1,4 +1,4 @@
-package com.hack.yeah;
+package com.app.ijoin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

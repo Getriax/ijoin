@@ -1,12 +1,13 @@
-package com.hack.yeah;
+package com.app.ijoin;
 
 import java.security.Principal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.function.Predicate;
 
+import com.app.ijoin.dao.PreferencesRespository;
+import com.app.ijoin.dao.UserRepository;
+import com.app.ijoin.model.User;
+import com.app.ijoin.service.SecurityService;
+import com.app.ijoin.service.UserService;
+import com.app.ijoin.service.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,15 +16,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import com.hack.yeah.dao.PreferencesRespository;
-import com.hack.yeah.dao.UserRepository;
-import com.hack.yeah.model.Preferences;
-import com.hack.yeah.model.User;
-import com.hack.yeah.service.SecurityService;
-import com.hack.yeah.service.UserService;
-import com.hack.yeah.service.UserValidator;
 
 @Controller
 public class UserController {
@@ -34,11 +26,11 @@ public class UserController {
 	private SecurityService securityService;
 
 	
-	@Autowired 
-	UserRepository userRepository;
+	@Autowired
+    UserRepository userRepository;
 	
 	@Autowired
-	PreferencesRespository preferencesRepository;
+    PreferencesRespository preferencesRepository;
 	
 	@Autowired
 	private UserValidator userValidator;

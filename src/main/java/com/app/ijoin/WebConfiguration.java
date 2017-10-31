@@ -1,18 +1,15 @@
-package com.hack.yeah;
+package com.app.ijoin;
 
-import org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter;
+import com.app.ijoin.service.SecurityService;
+import com.app.ijoin.service.SecurityServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.hack.yeah.service.SecurityService;
-import com.hack.yeah.service.SecurityServiceImpl;
-import com.hack.yeah.service.UserService;
-import com.hack.yeah.service.UserServiceImpl;
+import com.app.ijoin.service.UserService;
+import com.app.ijoin.service.UserServiceImpl;
 
 @Configuration
 @ComponentScan("com.demo.rest")
