@@ -1,9 +1,13 @@
 package com.app.ijoin;
 
 import java.security.Principal;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
-import com.app.ijoin.dao.PreferencesRespository;
+import com.app.ijoin.dao.PreferencesRepository;
 import com.app.ijoin.dao.UserRepository;
+import com.app.ijoin.model.Preferences;
 import com.app.ijoin.model.User;
 import com.app.ijoin.service.SecurityService;
 import com.app.ijoin.service.UserService;
@@ -12,10 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
@@ -30,7 +31,7 @@ public class UserController {
     UserRepository userRepository;
 	
 	@Autowired
-    PreferencesRespository preferencesRepository;
+	PreferencesRepository preferencesRepository;
 	
 	@Autowired
 	private UserValidator userValidator;
@@ -43,7 +44,7 @@ public class UserController {
 
 	@RequestMapping(value = "/registration", method = RequestMethod.POST)
 	public String registration(@ModelAttribute("userForm") User userForm, BindingResult res, Model model) {
-		System.out.println(userForm);
+
 		userValidator.validate(userForm, res);
 
 		if (res.hasErrors())

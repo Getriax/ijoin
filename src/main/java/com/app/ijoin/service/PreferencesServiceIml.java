@@ -2,7 +2,7 @@ package com.app.ijoin.service;
 
 import java.util.List;
 
-import com.app.ijoin.dao.PreferencesRespository;
+import com.app.ijoin.dao.PreferencesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.app.ijoin.model.Preferences;
@@ -11,13 +11,13 @@ import com.app.ijoin.model.Preferences;
 
 public class PreferencesServiceIml {
 	@Autowired
-    PreferencesRespository preferencesRespository;
+    PreferencesRepository preferencesRepository;
 	
 
 	public List<Preferences> findAll() {
-		return preferencesRespository.findAll();
+		return preferencesRepository.findAll();
 	}
 	public List<Preferences> findByUserId(Long uid) {
-		return preferencesRespository.findAllPreferencesByUserId(uid);
+		return preferencesRepository.findAllPreferencesByUserId(uid);
 	}
 }

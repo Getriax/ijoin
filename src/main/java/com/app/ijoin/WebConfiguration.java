@@ -2,6 +2,7 @@ package com.app.ijoin;
 
 import com.app.ijoin.service.SecurityService;
 import com.app.ijoin.service.SecurityServiceImpl;
+import com.google.gson.Gson;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -28,5 +29,4 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 	public SecurityService securityService() {
 		return new SecurityServiceImpl();
 	}
-
 }

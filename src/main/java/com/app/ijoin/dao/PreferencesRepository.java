@@ -10,11 +10,11 @@ import org.springframework.stereotype.Repository;
 import com.app.ijoin.model.Preferences;
 
 @Repository
-public interface PreferencesRespository extends JpaRepository<Preferences, Long> {
+public interface PreferencesRepository extends JpaRepository<Preferences, Long> {
 	@Query("SELECT p FROM Preferences p JOIN p.users u WHERE u.id = :uid")
 	List<Preferences> findAllPreferencesByUserId(@Param("uid") Long uid);
-	//@Query("SELECT p FROM Preferences p WHERE p.value := value")
-	Preferences findByValue(String value);
+	@Query("SELECT p FROM Preferences p WHERE lower(p.value) = lower(:val) ")
+	Preferences findByValue(@Param("val") String val);
 	
 	
 }

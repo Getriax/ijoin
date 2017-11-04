@@ -1,42 +1,56 @@
 package com.app.ijoin.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.gson.annotations.Expose;
+
 import java.util.Set;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 
 @Entity
 @Table(name = "user")
 public class User {
+	@Expose
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@Expose
 	private String username;
+	@Expose
 	private String email;
+	@Expose
 	private String password;
+	@Expose
 	private String about;
 	@Transient
 	private String confirmPassword;
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;
-	@ManyToMany
+	@JsonIgnore
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "user_preferences", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "preferences_id"))
 	private Set<Preferences> preferences;
 	@ManyToOne
 	@JoinColumn(name = "location_id")
 	private Location location;
-	
-	
+
+	public User() {
+	}
+
+
+	public User(String username) {
+		this.username = username;
+	}
+
+	public User(String username, Set<Preferences> preferences) {
+		this.username = username;
+		this.preferences = preferences;
+	}
+
+
 	public String getAbout() {
 		return about;
 	}
@@ -92,10 +106,17 @@ public class User {
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password
-				+ ", confirmPassword=" + confirmPassword + ", roles=" + roles + ", preferences=" + preferences + "]";
+		return "User{" +
+				"id=" + id +
+				", username='" + username + '\'' +
+				", email='" + email + '\'' +
+				", password='" + password + '\'' +
+				", about='" + about + '\'' +
+				", confirmPassword='" + confirmPassword + '\'' +
+				", location=" + location.getAddress() +
+				'}';
 	}
-	
 }
